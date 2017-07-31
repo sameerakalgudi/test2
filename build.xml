@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpdemo" default="build">
+ <property name="ftp.host" value="54.213.165.135"/>
+ <property name="ftp.port" value="22"/>
+ <property name="ftp.username" value="sam"/>
+ <property name="ftp.password" value="sam123"/>
+ <property name="ftp.dir" value="/var/www/html/"/>
+ <property name="ftp.mode" value="ascii"/>
+ <target name="build">
+  <echo msg="building"/>
+  <echo msg="Copying to deploy" />
+  <copy todir="/var/www/html" >
+    <fileset dir=".">
+      <include name="test.php"></include>
+      <exclude name="*.xml"></exclude>
+    </fileset>
+  </copy> 
+ </target>
+ <ftpdeploy
+  host="${ftp.host}"
+  port="${ftp.port}"
+  username="${ftp.username}"
+  password="${ftp.password}"
+  dir="${ftp.dir}"
+  mode="${ftp.mode}">
+  <fileset refid="."/>
+ </ftpdeploy>
+</project>
