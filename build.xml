@@ -2,7 +2,8 @@
 <project name="phpdemo" default="build">
  <target name="build">
   <echo msg="building"/>
-  <tar destfile="test.tar" compression="gzip">
+  <tar destfile="test.zip">
+   <fileset refid="test" />
   </tar>
  </target>
 </project>
