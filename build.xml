@@ -3,7 +3,6 @@
  <target name="build">
   <echo msg="building"/>
   <tar destfile="test.tar" compression="gzip">
-  <fileset refid="test.php" />
   </tar>
  </target>
 </project>
