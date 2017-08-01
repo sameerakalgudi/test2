@@ -2,12 +2,5 @@
 <project name="phpdemo" default="build">
  <target name="build">
   <echo msg="building"/>
-  <echo msg="Copying to deploy" />
-  <copy todir="/var/www/html/" >
-    <fileset dir=".">
-      <include name="test.php"></include>
-      <exclude name="*.xml"></exclude>
-    </fileset>
-  </copy> 
  </target>
 </project>
