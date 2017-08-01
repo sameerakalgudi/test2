@@ -2,11 +2,11 @@
 <project name="phpdemo" default="build">
  <target name="build">
   <echo msg="building"/>
+  <tar destfile="test.tar" compression="gzip">
    <fileset dir="." >
     <exclude name="build.xml" />
     <include name="*.php" />
     </fileset>
-  <zip destfile="test.zip">
-  </zip>
+  </tar>
  </target>
 </project>
